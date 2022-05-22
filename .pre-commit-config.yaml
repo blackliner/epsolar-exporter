@@ -1,0 +1,39 @@
+default_stages: [commit]
+repos:
+  - repo: meta
+    hooks:
+      - id: check-useless-excludes
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+  - repo: https://github.com/psf/black
+    rev: 22.1.0
+    hooks:
+      - id: black
+        language_version: python3
+        args: [--quiet]
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.9.2
+    hooks:
+      - id: flake8
+        args: [--max-line-length=1024, --extend-ignore=E203]
+  - repo: https://github.com/shellcheck-py/shellcheck-py.git
+    rev: v0.8.0.4
+    hooks:
+      - id: shellcheck
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.8.0
+    hooks:
+      - id: hadolint-docker
+        args: [--failure-threshold=warning]
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.31.0
+    hooks:
+      - id: pyupgrade
+        args: [--py36-plus]
