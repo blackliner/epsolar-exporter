@@ -4,6 +4,8 @@ A prometheus exporter based on https://github.com/Salamek/epsolar-tracer
 Uses poetry as the package manager for this python based project.
 Available as service, manual execution or through docker.
 
+![Image of a raspberry PI connected to a epsolar tracer](setup.jpeg "Setup")
+
 ## use as a systemd service
 
 run `install.sh` to run as a service
