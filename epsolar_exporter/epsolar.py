@@ -1,3 +1,4 @@
+import os
 from time import sleep
 
 from epsolar_tracer.client import EPsolarTracerClient
@@ -42,8 +43,9 @@ relevant_registers = {
     RegisterTypeEnum.BATTERY_CURRENT,
 }
 
+EPSOLAR_TTY_PORT = os.environ.get("EPSOLAR_TTY_PORT", "/dev/ttyUSB0")
 
-ep_solar_client = EPsolarTracerClient(port="/dev/ttyUSB0")
+ep_solar_client = EPsolarTracerClient(port=EPSOLAR_TTY_PORT)
 
 
 def read_all():
@@ -80,9 +82,9 @@ def read_ep_solar():
 
 def ep_solar_connect():
     if ep_solar_client.connect():
-        print("EPsolar connected to /dev/ttyUSB0")
+        print(f"EPsolar connected to {EPSOLAR_TTY_PORT}")
         return True
     else:
-        print("Error connecting to /dev/ttyUSB0")
+        print(f"Error connecting to {EPSOLAR_TTY_PORT}")
         sleep(1)
         return False
