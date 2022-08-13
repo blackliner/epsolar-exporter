@@ -1,0 +1,12 @@
+# systemd unit file for the EPsolar prometheus exporter
+
+[Unit]
+Description=EPsolar prometheus exporter
+
+[Service]
+ExecStart=epsolar-exporter
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

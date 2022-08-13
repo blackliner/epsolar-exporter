@@ -1,11 +1,23 @@
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
 [tool.poetry]
 name = "epsolar-exporter"
 version = "0.1.0"
 description = ""
 authors = ["Florian Berchtold <florian.berchtold@luminartech.com>"]
 
+[tool.poetry.scripts]
+epsolar-exporter = "epsolar_exporter.main:run"
+
 [tool.poetry.dependencies]
 python = "^3.9"
+prometheus-client = "^0.14.1"
+epsolar-tracer = "^0.0.17"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
