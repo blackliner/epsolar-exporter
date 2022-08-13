@@ -1,6 +1,9 @@
 # epsolar-exporter
 A prometheus exporter based on https://github.com/Salamek/epsolar-tracer
 
+Uses poetry as the package manager for this python based project.
+Available as service, manual execution or through docker.
+
 ## use as a systemd service
 
 run `install.sh` to run as a service
