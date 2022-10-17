@@ -16,7 +16,7 @@ epsolar-exporter = "epsolar_exporter.main:run"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-prometheus-client = "^0.14.1"
+prometheus-client = "^0.15.0"
 epsolar-tracer = "^0.0.17"
 
 [tool.poetry.dev-dependencies]
