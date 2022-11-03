@@ -13,6 +13,6 @@ jobs:
       with:
         fetch-depth: 0
     - uses: actions/setup-python@v2
-    - uses: pre-commit/action@v2.0.3
+    - uses: pre-commit/action@646c83fcd040023954eafda54b4db0192ce70507 # tag=v3.0.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
