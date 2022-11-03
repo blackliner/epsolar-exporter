@@ -31,3 +31,5 @@ COPY . /src
 WORKDIR /src
 
 RUN poetry install --no-interaction --no-ansi
+
+CMD [ "epsolar-exporter" ]

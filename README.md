@@ -16,7 +16,7 @@ build and run the dockerfile. Make sure the port 8000 is exposed.
 
 ```
 docker build . -t epsolar_exporter
-docker run --rm -it -p 8000:8000  epsolar_exporter epsolar-exporter
+docker run --rm -it -p 8000:8000  epsolar_exporter
 ```
 
 ## how to choose the TTY port
@@ -24,5 +24,5 @@ docker run --rm -it -p 8000:8000  epsolar_exporter epsolar-exporter
 use the env variable `EPSOLAR_TTY_PORT` to define the tty port, for example:
 
 ```
-docker run --rm -it --device /dev/ttyUSB1 -p 8000:8000  epsolar_exporter epsolar-exporter
+docker run --rm -it --device /dev/ttyUSB1 -p 8000:8000  epsolar_exporter
 ```
