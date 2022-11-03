@@ -4,6 +4,8 @@ on:
   pull_request:
   push:
     branches: [main]
+    tags:
+      - '*'
 
 jobs:
   pre-commit:
@@ -18,8 +20,15 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: blackliner/epsolar-exporter
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: true
-          tags: blackliner/epsolar-exporter:latest
+          context: .
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
