@@ -1,4 +1,4 @@
-FROM python:3.11.0-slim-buster@sha256:e3168357ada3287cda4c79ecae7f5103cb4d071d9b610a1d9380ea4b7cfc981f
+FROM python:3.11.1-slim-buster@sha256:687a73bfa1576c2dc516b50db7203a95f73545d2dd9b612a08da6abf0dafa64a
 
 ENV PYTHONFAULTHANDLER=1 \
   PYTHONUNBUFFERED=1 \
