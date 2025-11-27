@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@c299e40c65443455700f0fdfc63efafe5b349051 # v5
         with:
           images: blackliner/epsolar-exporter
       - name: Build and push
