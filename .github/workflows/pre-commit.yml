@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3
       with:
         fetch-depth: 0
-    - uses: actions/setup-python@5ccb29d8773c3f3f653e1705f474dfaa8a06a912 # v4
+    - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
     - uses: pre-commit/action@9b88afc9cd57fd75b655d5c71bd38146d07135fe # tag=v2.0.3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
